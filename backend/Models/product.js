@@ -31,13 +31,7 @@ const productSchema=mongoose.Schema({
         type:mongoose.Schema.Types.ObjectId,
         ref:"review"
     }]
-    ,
-    quintity:[
-        {
-            type:Number,
-            require:true
-        }
-    ]
+   
 })
 
 module.exports=mongoose.model("product",productSchema);

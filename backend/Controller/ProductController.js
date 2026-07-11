@@ -5,9 +5,9 @@ const userSchema=require("../Models/userModel");
 const wishlistSchema=require("../Models/wishlistModel");
 
 const AddProduct=async (req,res)=>{
-    const {name,brand,price,category,image,discription,featured,quintity}=req.body;
+    const {name,brand,price,category,image,discription,featured}=req.body;
     const products=await productSchema.create({
-        name,brand,price,category,image,discription,featured,quintity
+        name,brand,price,category,image,discription,featured
     });
     return res.json({message:"Product Add successfully",products})
 }
