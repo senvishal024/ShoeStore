@@ -4,7 +4,10 @@ const router  = require("./Routes/userRoutes");
 const dbconnect=require("./Config/databaseConnect");
 const isLoggedIn = require("./Middleware/isLoggedIn");
 const app =express();
-app.use(cors());
+app.use(cors({
+  origin: "https://shoe-store-lac-mu.vercel.app",
+  credentials: true
+}));
 app.use(express.json());
 require("dotenv").config();
 const PORT=process.env.PORT;
