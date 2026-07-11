@@ -14,7 +14,7 @@ function ProductDetailComponent({setCategory}){
   },[id])
   const fetchdetails=async ()=>{
   
-    const response=await fetch(`http://localhost:5000/shoeapp/show-product-detail/${id}`,{
+    const response=await fetch(`https://shoestore-4f06.onrender.com/shoeapp/show-product-detail/${id}`,{
       credentials: "include",
       headers:{
         Authorization:null
