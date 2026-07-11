@@ -28,7 +28,7 @@ function AddProducts() {
       Add New Product
     </h1>
 
-    <form className="space-y-5"   onSubmit={()=>AddProductHandle}>
+    <form className="space-y-5"   onSubmit={(e)=>AddProductHandle(e)}>
 
       {/* Product Name */}
       <div>
