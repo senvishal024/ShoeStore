@@ -1,4 +1,5 @@
 import CartComponent from "../Components/CartComponent";
+import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
 
 function CartPage(){
@@ -7,6 +8,7 @@ function CartPage(){
         < >
         <Navbar></Navbar>
         <CartComponent></CartComponent>
+        <Footer/>
         </>
     )
 }
