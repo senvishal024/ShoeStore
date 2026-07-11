@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 function AddProducts() {
     const [product,setProduct]=useState({name:"",brand:"",category:"",price:"",image:"",discription:"",featured:false});
+    
     const AddProductHandle=async ()=>{
       
 

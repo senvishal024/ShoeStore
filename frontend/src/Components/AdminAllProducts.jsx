@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import LoadingSpinner from './LoadingSpinner';
 function AdminAllProducts() {
     const navigate=useNavigate();
+    const [loading,setLoading]=useState(false);
     const [product,setProduct]=useState([]);
     useEffect(()=>{
         fetchProducts();
     },[])
     const fetchProducts=async ()=>{
+      setLoading(true);
         const response =await fetch("https://shoestore-4f06.onrender.com/shoeapp/admin/allproducts",{
           credentials: "include",
             headers:{
@@ -16,6 +19,7 @@ function AdminAllProducts() {
         const data =await response.json();
         
         setProduct(data);
+        setLoading(false);
         console.log("admin",data);
     }
     const deleteHandle=async (id)=>{
@@ -30,6 +34,9 @@ function AdminAllProducts() {
       const data=await response.json();
       fetchProducts();
 
+    }
+    if(loading){
+      return <LoadingSpinner/>
     }
   return (
   <>
