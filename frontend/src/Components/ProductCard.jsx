@@ -21,6 +21,7 @@ function ProductCard({search,sort,category}) {
 
       const response =await fetch(`http://localhost:5000/shoeapp/add-wishlist/${id}`,{
         method:"POST",
+        credentials: "include",
         headers:{
           Authorization:localStorage.getItem("token")
         }
@@ -39,6 +40,7 @@ function ProductCard({search,sort,category}) {
     const response = await fetch(
       `https://shoestore-4f06.onrender.com/shoeapp/show-products?search=${search}&sort=${sort}&category=${category}`,
       {
+        credentials: "include",
         headers: {
           Authorization: localStorage.getItem("token")||""
         },

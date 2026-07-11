@@ -8,6 +8,7 @@ function AdminAllProducts() {
     },[])
     const fetchProducts=async ()=>{
         const response =await fetch("https://shoestore-4f06.onrender.com/shoeapp/admin/allproducts",{
+          credentials: "include",
             headers:{
                 Authorization:localStorage.getItem("token")
             }
@@ -20,6 +21,7 @@ function AdminAllProducts() {
     const deleteHandle=async (id)=>{
       const response=await fetch(`https://shoestore-4f06.onrender.com/shoeapp/admin/deleteproduct/${id}`,{
         method:"DELETE",
+        credentials: "include",
         headers:{
           Authorization:localStorage.getItem("token")
         }

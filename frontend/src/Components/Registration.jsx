@@ -9,6 +9,7 @@ function RegistrationPage(){
         console.log("before fetch")
         const response= await fetch("https://shoestore-4f06.onrender.com/shoeapp/registration",{
             method:"POST",
+            credentials: "include",
             headers:{
                 "Content-Type":"application/json"
             },

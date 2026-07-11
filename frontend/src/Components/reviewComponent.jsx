@@ -20,6 +20,7 @@ function ReviewComponent() {
         if(token){
               const response=await fetch(`https://shoestore-4f06.onrender.com/shoeapp/add-review/${id}`,{
                   method:"POST",
+                  credentials: "include",
                   headers:{
                       Authorization:localStorage.getItem("token"),
                       "Content-Type":"application/json"
@@ -46,6 +47,7 @@ function ReviewComponent() {
     
     const fetchReview=async ()=>{
         const response= await fetch(`http://localhost:5000/shoeapp/show-review/${id}`,{
+          credentials: "include",
             headers:{
                 Authorization:null
             }

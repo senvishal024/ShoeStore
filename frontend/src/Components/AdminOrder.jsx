@@ -9,6 +9,7 @@ function AdminOrder() {
     },[])
     const fetchOrders=async ()=>{
         const response=await fetch("https://shoestore-4f06.onrender.com/shoeapp/admin/orders",{
+          credentials: "include",
             headers:{
                 Authorization:localStorage.getItem("token")
             }
@@ -22,6 +23,7 @@ function AdminOrder() {
       console.log(status[id])
       const response=await fetch(`https://shoestore-4f06.onrender.com/shoeapp/admin/statusupdate/${id}`,{
         method:"PATCH",
+        credentials: "include",
         headers:{
           Authorization:localStorage.getItem("token"),
           "Content-Type":"application/json"

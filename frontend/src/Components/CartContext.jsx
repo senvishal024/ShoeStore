@@ -21,6 +21,7 @@ function CartContext({children}) {
         (
           "https://shoestore-4f06.onrender.com/shoeapp/cart",
           {
+            credentials: "include",
             headers: {
               Authorization: localStorage.getItem("token"),
             },

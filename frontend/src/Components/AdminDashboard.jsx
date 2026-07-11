@@ -9,6 +9,7 @@ function AdminDashboard() {
     },[])
     const fetchdetails=async ()=>{
         const response=await fetch("https://shoestore-4f06.onrender.com/shoeapp/admin/dashboard",{
+          credentials: "include",
             headers:{
                 Authorization:localStorage.getItem("token")
             }

@@ -23,6 +23,7 @@ function ProductEdit() {
         console.log(product);
         const response=await fetch(`https://shoestore-4f06.onrender.com/shoeapp/admin/edit-product/${id}`,{
             method:"PUT",
+            credentials: "include",
                 headers:{
                     Authorization:localStorage.getItem("token"),
                     "Content-Type":"application/json"

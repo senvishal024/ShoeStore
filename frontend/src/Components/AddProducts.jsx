@@ -6,6 +6,7 @@ function AddProducts() {
         
         const response=await fetch("https://shoestore-4f06.onrender.com/shoeapp/admin/add-products",{
             method:"POST",
+            credentials: "include",
             headers:{
                 "Content-Type":"application/json",
                 Authorization: localStorage.getItem("token")

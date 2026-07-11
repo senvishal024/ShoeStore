@@ -25,6 +25,7 @@ function CartComponent() {
         const response =await fetch(`https://shoestore-4f06.onrender.com/shoeapp/cart-decrease/${id}`,
           {
           method:"PATCH",
+          credentials: "include",
           headers:{
             Authorization:localStorage.getItem("token"),
           },
@@ -37,7 +38,9 @@ function CartComponent() {
       const increaseQuantity=async (id)=>{
         const response =await fetch(`https://shoestore-4f06.onrender.com/shoeapp/cart-increase/${id}`,{
           method:"PATCH",
+          credentials: "include",
           headers:{
+               
             Authorization:localStorage.getItem("token"),
           },
         })
@@ -48,6 +51,7 @@ function CartComponent() {
       const shopNowHamdle=async (id)=>{
        const response=await fetch(`https://shoestore-4f06.onrender.com/shoeapp/order/${id}`,{
         method:"POST",
+        credentials: "include",
         headers:{
           Authorization:localStorage.getItem("token"),
         }
@@ -62,6 +66,7 @@ function CartComponent() {
       const removeButtonHandle=async (id)=>{
         const response=await fetch(`https://shoestore-4f06.onrender.com/shoeapp/remove-cart/${id}`,{
           method:"DELETE",
+          credentials: "include",
           headers:{
             Authorization:localStorage.getItem("token"),
           }
