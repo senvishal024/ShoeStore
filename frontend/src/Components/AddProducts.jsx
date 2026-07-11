@@ -10,7 +10,6 @@ function AddProducts() {
       
         const response=await fetch("https://shoestore-4f06.onrender.com/shoeapp/admin/add-products",{
             method:"POST",
-            credentials: "include",
             headers:{
                 "Content-Type":"application/json",
                 Authorization: localStorage.getItem("token")
@@ -29,7 +28,7 @@ function AddProducts() {
       Add New Product
     </h1>
 
-    <form className="space-y-5"   onSubmit={()=>AddProductHandle()}>
+    <form className="space-y-5"   onSubmit={()=>AddProductHandle}>
 
       {/* Product Name */}
       <div>
