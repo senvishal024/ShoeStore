@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 function AddProducts() {
     const [product,setProduct]=useState({featured:false});
     const AddProductHandle=async (e)=>{
-      e.preventDefault();
+      
 
        console.log("Sending:", product);
         console.log("JSON:", JSON.stringify(product));
@@ -17,7 +17,6 @@ function AddProducts() {
             body:JSON.stringify(product)
         })
         const data=await response.json();
-        setProduct({name:"",brand:"",category:"",price:"",image:"",discription:"" ,featured:false})
         console.log("data",data);
     }
   return (
