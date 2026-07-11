@@ -1,0 +1,64 @@
+const mongoose=require("mongoose");
+
+ 
+const orderSchema=mongoose.Schema({
+    userId:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"user",
+        required:true
+    },
+    products:{
+        type:Array,
+        required:true
+    },
+    name:{
+        type:String,
+        required:true
+    },
+    email:{
+        type:String,
+        required:true
+    },
+    number:{
+        type:String,
+        required:true
+    },
+    address:{
+        type:String,
+        required:true
+    },
+    city:{
+        type:String,
+        required:true
+    },
+    pincode:{
+        type:String,
+        required:true
+    },
+    subtotal:{
+        type:Number,
+        required:true
+    },
+    shippingAmount:{
+        type:Number,
+        required:true
+    },
+    taxAmount:{
+        type:Number,
+        required:true
+    },
+    grandTotal:{
+        type:Number,
+        required:true
+    },
+    status:{
+        type:String,
+        default:"pending"
+    },
+    createdAt:{
+        type:Date,
+        default:Date.now
+    }
+
+})
+module.exports=mongoose.model("Order",orderSchema)
