@@ -32,8 +32,6 @@ function ReviewComponent() {
               setRating(0);
               toast.success("Review is added");
               fetchReview();
-              
-              
             }
             else{
               const isconfirmed=confirm("Please Login first");

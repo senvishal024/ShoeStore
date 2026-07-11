@@ -17,6 +17,7 @@ function AddProducts() {
             body:JSON.stringify(product)
         })
         const data=await response.json();
+        setProduct({name:"",brand:"",category:"",price:"",image:"",description:"" ,featured:false})
         console.log("data",data);
     }
   return (
