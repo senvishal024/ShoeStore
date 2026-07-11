@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 
 function AddProducts() {
     const [product,setProduct]=useState({name:"",brand:"",category:"",price:"",image:"",discription:"",featured:false});
-    const AddProductHandle=async (e)=>{
-      e.preventDefault();
+    const AddProductHandle=async ()=>{
+      
 
        console.log("Sending:", product);
         console.log("JSON:", JSON.stringify(product));
@@ -30,7 +30,7 @@ function AddProducts() {
       Add New Product
     </h1>
 
-    <form className="space-y-5"   onSubmit={(e)=>AddProductHandle(e)}>
+  
 
       {/* Product Name */}
       <div>
@@ -171,15 +171,14 @@ function AddProducts() {
         </div>
       {/* Button */}
       <button
-      type='submit'
-        
+           onClick={()=>AddProductHandle()}
         className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition duration-300"
       
       >
         Add Product
       </button>
 
-    </form>
+    
 
   </div>
 </div>
