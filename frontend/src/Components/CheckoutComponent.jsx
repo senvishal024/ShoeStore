@@ -53,7 +53,7 @@ if (type === "buyNow" && product) {
         taxAmount,
     }
 
-    const response=await fetch("http://localhost:5000/shoeapp/order",{
+    const response=await fetch("https://shoestore-4f06.onrender.com/shoeapp/order",{
       method:"POST",
       headers:{
         Authorization:localStorage.getItem("token"),

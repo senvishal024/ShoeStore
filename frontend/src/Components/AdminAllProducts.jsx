@@ -7,7 +7,7 @@ function AdminAllProducts() {
         fetchProducts();
     },[])
     const fetchProducts=async ()=>{
-        const response =await fetch("http://localhost:5000/shoeapp/admin/allproducts",{
+        const response =await fetch("https://shoestore-4f06.onrender.com/shoeapp/admin/allproducts",{
             headers:{
                 Authorization:localStorage.getItem("token")
             }
@@ -18,7 +18,7 @@ function AdminAllProducts() {
         console.log("admin",data);
     }
     const deleteHandle=async (id)=>{
-      const response=await fetch(`http://localhost:5000/shoeapp/admin/deleteproduct/${id}`,{
+      const response=await fetch(`https://shoestore-4f06.onrender.com/shoeapp/admin/deleteproduct/${id}`,{
         method:"DELETE",
         headers:{
           Authorization:localStorage.getItem("token")

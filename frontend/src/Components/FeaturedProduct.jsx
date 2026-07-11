@@ -12,7 +12,7 @@ function FeaturedProduct() {
 
   const fetchProducts = async () => {
     const response = await fetch(
-      "http://localhost:5000/shoeapp/featured-products",
+      "https://shoestore-4f06.onrender.com/shoeapp/featured-products",
       {
         headers: {
           Authorization: null,

@@ -19,7 +19,7 @@ function CartContext({children}) {
       {
         const response = await fetch
         (
-          "http://localhost:5000/shoeapp/cart",
+          "https://shoestore-4f06.onrender.com/shoeapp/cart",
           {
             headers: {
               Authorization: localStorage.getItem("token"),

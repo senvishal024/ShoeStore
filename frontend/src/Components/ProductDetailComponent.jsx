@@ -40,7 +40,7 @@ function ProductDetailComponent({setCategory}){
        }
       }
       else{
-      const response=await fetch(`http://localhost:5000/shoeapp/add-cart/${id}`,{
+      const response=await fetch(`https://shoestore-4f06.onrender.com/shoeapp/add-cart/${id}`,{
         method:"POST",
         headers:{
           Authorization:localStorage.getItem("token")

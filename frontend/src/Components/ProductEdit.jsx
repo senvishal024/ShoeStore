@@ -21,7 +21,7 @@ function ProductEdit() {
     const submitHandle=async (e)=>{
          e.preventDefault();
         console.log(product);
-        const response=await fetch(`http://localhost:5000/shoeapp/admin/edit-product/${id}`,{
+        const response=await fetch(`https://shoestore-4f06.onrender.com/shoeapp/admin/edit-product/${id}`,{
             method:"PUT",
                 headers:{
                     Authorization:localStorage.getItem("token"),

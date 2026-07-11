@@ -7,7 +7,7 @@ function RegistrationPage(){
     const handleSubmit=async ()=>{
     
         console.log("before fetch")
-        const response= await fetch("http://localhost:5000/shoeapp/registration",{
+        const response= await fetch("https://shoestore-4f06.onrender.com/shoeapp/registration",{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"

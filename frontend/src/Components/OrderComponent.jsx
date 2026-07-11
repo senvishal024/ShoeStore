@@ -9,7 +9,7 @@ function OrderComponent() {
     fetchOrders();
   },[])
   const fetchOrders=async ()=>{
-    const response =await fetch("http://localhost:5000/shoeapp/showorders",
+    const response =await fetch("https://shoestore-4f06.onrender.com/shoeapp/showorders",
       {
         headers:{
           Authorization:localStorage.getItem("token")

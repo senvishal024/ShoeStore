@@ -37,7 +37,7 @@ function ProductCard({search,sort,category}) {
   const fetchProducts = async () => {
     setLoading(true);
     const response = await fetch(
-      `http://localhost:5000/shoeapp/show-products?search=${search}&sort=${sort}&category=${category}`,
+      `https://shoestore-4f06.onrender.com/shoeapp/show-products?search=${search}&sort=${sort}&category=${category}`,
       {
         headers: {
           Authorization: localStorage.getItem("token")||""

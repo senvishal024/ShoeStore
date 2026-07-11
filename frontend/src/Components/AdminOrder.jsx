@@ -8,7 +8,7 @@ function AdminOrder() {
         fetchOrders();
     },[])
     const fetchOrders=async ()=>{
-        const response=await fetch("http://localhost:5000/shoeapp/admin/orders",{
+        const response=await fetch("https://shoestore-4f06.onrender.com/shoeapp/admin/orders",{
             headers:{
                 Authorization:localStorage.getItem("token")
             }
@@ -20,7 +20,7 @@ function AdminOrder() {
     const updateStatusHandle=async (id)=>{
       console.log("status",id);
       console.log(status[id])
-      const response=await fetch(`http://localhost:5000/shoeapp/admin/statusupdate/${id}`,{
+      const response=await fetch(`https://shoestore-4f06.onrender.com/shoeapp/admin/statusupdate/${id}`,{
         method:"PATCH",
         headers:{
           Authorization:localStorage.getItem("token"),

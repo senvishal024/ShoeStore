@@ -18,7 +18,7 @@ function ReviewComponent() {
     const submitReview=async ()=>{
        const token=localStorage.getItem("token");
         if(token){
-              const response=await fetch(`http://localhost:5000/shoeapp/add-review/${id}`,{
+              const response=await fetch(`https://shoestore-4f06.onrender.com/shoeapp/add-review/${id}`,{
                   method:"POST",
                   headers:{
                       Authorization:localStorage.getItem("token"),
