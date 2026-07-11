@@ -1,8 +1,8 @@
 const express=require("express");
 const { registstrationController, loginController } = require("../Controller/Registration");
 const isLoggedIn = require("../Middleware/isLoggedIn");
-const { AddProduct, ShowProducts, ShowProductsDetail, DeleteProduct, EditProduct, Dashboard, featuredProduct, ShowProductsHome } = require("../Controller/productController");
-const { CartAdd, CartShow, CartDecrease, CartIncrease, CartDelete } = require("../Controller/cartController");
+const { AddProduct, ShowProducts, ShowProductsDetail, DeleteProduct, EditProduct, Dashboard, featuredProduct, ShowProductsHome } = require("../Controller/ProductController");
+const { CartAdd, CartShow, CartDecrease, CartIncrease, CartDelete } = require("../Controller/CartController");
 const { OrderSchema, ShowOrders, AdminOrders, StatusUpdate } = require("../Controller/orderController");
 const adminIsLoggedIn =require("../Middleware/adminMiddleware");
 const { reviewAdd, showReview, showRating } = require("../Controller/reviewController");
