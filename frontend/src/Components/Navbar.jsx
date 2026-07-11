@@ -25,7 +25,7 @@ function Navbar() {
     if(!token){
       const isconfirmed=window.confirm("please login first");
       if(isconfirmed){
-        return navigate("login");
+        return navigate("/login");
       }
       else{
         return;
