@@ -19,6 +19,7 @@ function AddProducts() {
         const data=await response.json();
         setProduct({name:"",brand:"",category:"",price:"",image:"",discription:"",featured:false})
         console.log("data",data);
+        alert("product added")
     }
   return (
    <>
