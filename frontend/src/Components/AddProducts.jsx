@@ -29,7 +29,7 @@ function AddProducts() {
       Add New Product
     </h1>
 
-    <form className="space-y-5">
+    <form className="space-y-5"   onSubmit={()=>AddProductHandle()}>
 
       {/* Product Name */}
       <div>
@@ -163,9 +163,10 @@ function AddProducts() {
         </div>
       {/* Button */}
       <button
+      type='submit'
         
         className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition duration-300"
-        onClick={()=>AddProductHandle()}
+      
       >
         Add Product
       </button>
