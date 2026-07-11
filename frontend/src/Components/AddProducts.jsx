@@ -38,6 +38,7 @@ function AddProducts() {
           Product Name
         </label>
         <input
+        value={product.name}
           type="text"
           placeholder="Enter Product Name"
           className="w-full border rounded-lg p-3 outline-none focus:ring-2 focus:ring-blue-500"
@@ -55,6 +56,7 @@ function AddProducts() {
           Brand
         </label>
         <input
+        value={product.brand}
           type="text"
           placeholder="Enter Brand Name"
           className="w-full border rounded-lg p-3 outline-none focus:ring-2 focus:ring-blue-500"
@@ -71,7 +73,8 @@ function AddProducts() {
           Category
         </label>
 
-        <select className="w-full border rounded-lg p-3 outline-none focus:ring-2 focus:ring-blue-500" onChange={(e)=>setProduct({
+        <select className="w-full border rounded-lg p-3 outline-none focus:ring-2 focus:ring-blue-500"
+        value={product.category} onChange={(e)=>setProduct({
             ...product,
             category:e.target.value
         })}>
@@ -93,6 +96,7 @@ function AddProducts() {
           type="number"
           placeholder="Enter Product Price"
           className="w-full border rounded-lg p-3 outline-none focus:ring-2 focus:ring-blue-500"
+          value={product.price}
         onChange={(e)=>setProduct({
             ...product,
             price:e.target.value
@@ -107,6 +111,7 @@ function AddProducts() {
           Image URL
         </label>
         <input
+        value={product.image}
           type="text"
           placeholder="Paste Image URL"
           className="w-full border rounded-lg p-3 outline-none focus:ring-2 focus:ring-blue-500"
@@ -141,6 +146,7 @@ function AddProducts() {
           rows="5"
           placeholder="Enter Product Description"
           className="w-full border rounded-lg p-3 outline-none focus:ring-2 focus:ring-blue-500"
+          value={product.discription}
           onChange={(e)=>setProduct({
             ...product,
             discription:e.target.value
@@ -151,6 +157,7 @@ function AddProducts() {
            <input
             type="checkbox"
             id="featured"
+            value={product.featured}
             checked={product.featured}
           onChange={(e) => setProduct({
             ...product,
