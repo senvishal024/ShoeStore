@@ -4,7 +4,7 @@ function AddProducts() {
     const [product,setProduct]=useState({featured:false});
     const AddProductHandle=async (e)=>{
         
-        const response=await fetch("http://localhost:5000/shoeapp/admin/add-products",{
+        const response=await fetch("https://shoestore-4f06.onrender.com/shoeapp/admin/add-products",{
             method:"POST",
             headers:{
                 "Content-Type":"application/json",
