@@ -46,7 +46,7 @@ function ReviewComponent() {
     
     
     const fetchReview=async ()=>{
-        const response= await fetch(`http://localhost:5000/shoeapp/show-review/${id}`,{
+        const response= await fetch(`https://shoestore-4f06.onrender.com/shoeapp/show-review/${id}`,{
           credentials: "include",
             headers:{
                 Authorization:null
