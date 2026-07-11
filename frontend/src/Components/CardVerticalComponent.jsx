@@ -42,7 +42,7 @@
     
       return (
         <>
-          <section className="relative bg-fixed min-h-screen bg-cover bg-center" style={{ backgroundImage: `url(${categoryImages[category]})`, }} >
+          <section className="relative bg-fixed h-[40vh] sm:h-[50vh] md:h-[60vh] bg-cover bg-center" style={{ backgroundImage: `url(${categoryImages[category]})`, }} >
            <div className="absolute inset-0 bg-black/50">
            </div> 
            <div className="relative h-full flex flex-col justify-center items-center text-center px-4">
