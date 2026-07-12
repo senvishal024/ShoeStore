@@ -166,13 +166,13 @@ function ReviewComponent() {
 
           <div className="mt-10 space-y-6">
                  {detail.map((item)=>(
-            <div className="bg-white rounded-3xl shadow-md p-6" key={item._id}>
+            <div className="bg-white rounded-3xl shadow-md p-5 sm:p-6" key={item._id}>
 
-              <div className="flex justify-between">
+              <div className="flex flex-col sm:flex-row sm:justify-between gap-3">
 
                 <div>
 
-                  <h4 className="font-bold text-xl text-[#4E220F]">
+                  <h4 className="font-bold text-lg sm:text-xl text-[#4E220F]">
                     {item.userId.name}
                   </h4>
 
@@ -191,13 +191,13 @@ function ReviewComponent() {
 
                 </div>
 
-                <span className="text-gray-400">
+                <span className="text-sm text-gray-400">
                     {new Date(item.createdAt).toLocaleDateString()}
                 </span>
 
               </div>
 
-              <p className="mt-5 text-gray-600 leading-7">
+              <p className="mt-4 sm:mt-5 text-sm sm:text-base text-gray-600 leading-6 sm:leading-7">
                 {item.review}
               </p>
 
