@@ -109,7 +109,7 @@ function ReviewComponent() {
                     ))}
                     </div>
 
-              <p className="text-gray-500">
+              <p  className="text-sm sm:text-base text-gray-500">
                 Based on {totalReview} Reviews
               </p>
             </div>
