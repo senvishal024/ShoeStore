@@ -9,7 +9,7 @@ function ProductEdit() {
         fetchProducts();
     },[])
     const fetchProducts=async ()=>{
-        const response=await fetch(`http://localhost:5000/shoeapp/admin/edit-product/${id}`,{
+        const response=await fetch(`https://shoestore-4f06.onrender.com/shoeapp/admin/edit-product/${id}`,{
         headers:{
             Authorization:localStorage.getItem("token")
         }
