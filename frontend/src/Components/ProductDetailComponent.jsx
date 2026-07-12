@@ -54,29 +54,24 @@ function ProductDetailComponent({setCategory}){
   }
     return(
         <>
-       <div className=" py-16 sm:py-20 lg:py-28">
-
-  <button
-    onClick={() => navigate(-1)}
-    className="absolute top-6 left-4 sm:top-10 sm:left-6 lg:top-20 lg:left-8 font-semibold text-[#4E220F] hover:text-[#9D6638] transition-all duration-300"
-  >
-    <span className="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-full border border-[#4E220F] hover:bg-[#4E220F] hover:text-white transition">
-      <FaArrowLeft className="text-sm" />
-    </span>
-  </button>
-
-  <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 px-4 sm:px-6">
-
-    {/* Product Image */}
-    <div className="border-2 h-[320px] sm:h-[450px] lg:h-[650px] flex items-center justify-center p-4 sm:p-6 lg:p-10 overflow-hidden">
-      <img
-        src={details.image}
-        alt={details.name}
-        className="max-w-full max-h-full object-contain transition-transform duration-500 hover:scale-105"
-      />
-    </div>
-
-  </div>
+        <div className="min-h-screen  py-28">
+        <button     
+                    onClick={()=>navigate(-1)}
+                      className="absolute top-20   left-8 items-center font-semibold text-[#4E220F] hover:text-[#9D6638] transition-all duration-300 "
+                >
+                     <span className="w-10 h-10 flex items-center justify-center rounded-full border border-[#4E220F] hover:bg-[#4E220F] hover:text-white transition">
+                        <FaArrowLeft className="text-sm" />
+                    </span>  
+                </button> 
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 px-6">
+      
+        {/* Product Image */}
+       <div className=" border-2 h-[650px] flex items-center justify-center p-10 overflow-hidden">
+  <img
+    src={details.image}
+    alt={details.name}
+    className="max-w-full max-h-full object-contain transition-transform duration-500 hover:scale-105"
+  />
 </div>
 
 
