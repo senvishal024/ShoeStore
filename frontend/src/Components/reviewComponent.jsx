@@ -66,7 +66,7 @@ function ReviewComponent() {
 
     }
   return (
-    <section className="max-w-7xl mx-auto px-6 py-20">
+   <section className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-20">
 
       {/* Heading */}
       <div className="mb-12">
