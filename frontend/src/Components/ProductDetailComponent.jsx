@@ -77,24 +77,26 @@ function ProductDetailComponent({setCategory}){
 
         {/* Product Information */}
         <div>
-          <h1 className="text-6xl leading-tight font-bold text-[#4E220F]">
-            {details.name}
-          </h1>
+          <h1 className="text-3xl sm:text-4xl lg:text-6xl leading-tight font-bold text-[#4E220F]">
+  {details.name}
+</h1>
 
-          <p className="text-[#9D6638] text-lg mt-2 font-medium">
-            {details.category}
-          </p>
+<p className="text-sm sm:text-base lg:text-lg mt-2 font-medium text-[#9D6638]">
+  {details.category}
+</p>
 
-          <p className="text-5xl font-bold text-[#4e220f] mt-8">
-           ₹ {details.price} <span className="text-xl px-4 line-through">3000</span>
-          </p>
+<p className="mt-6 lg:mt-8 text-3xl sm:text-4xl lg:text-5xl font-bold text-[#4E220F]">
+  ₹ {details.price}
+  <span className="ml-2 sm:ml-4 text-base sm:text-lg lg:text-xl text-gray-500 line-through">
+    ₹3000
+  </span>
+</p>
 
-          <div className="mt-4">
-            <span className="bg-[#B0BA99] text-[#4E220F] px-4 py-2 rounded-full font-semibold">
-              In Stock
-            </span>
-          </div>
-
+<div className="mt-4">
+  <span className="inline-block bg-[#B0BA99] text-[#4E220F] px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-sm sm:text-base font-semibold">
+    In Stock
+  </span>
+</div>
           <div className="mt-6">
             <h2 className="text-2xl font-bold text-[#4E220F] mt-10 mb-4">
               Description
