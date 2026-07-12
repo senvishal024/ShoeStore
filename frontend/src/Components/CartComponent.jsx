@@ -81,26 +81,26 @@ function CartComponent() {
      /*  when cart will empty this function show dummy element */
    if (cart.length === 0) {
     return (
-      <div className="min-h-screen bg-[#F7F1DE] flex flex-col justify-center items-center">
+      <div className="min-h-screen bg-[#F7F1DE] flex flex-col justify-center items-center px-4 text-center">
+  
+  <div className="text-6xl sm:text-7xl md:text-8xl">
+    🛒
+  </div>
 
-    <div className="text-8xl">
-        🛒
-    </div>
+  <h1 className="mt-5 text-3xl sm:text-4xl md:text-5xl font-bold text-[#4E220F] leading-tight">
+    Your Cart is Empty
+  </h1>
 
-    <h1 className="text-5xl font-bold text-[#4E220F] mt-6">
-        Your Cart is Empty
-    </h1>
+  <p className="mt-3 text-sm sm:text-base md:text-lg text-[#9D6638] max-w-md">
+    Looks like you haven't added anything yet.
+  </p>
 
-    <p className="text-[#9D6638] mt-3">
-        Looks like you haven't added anything yet.
-    </p>
-
-    <button
-        onClick={()=>Navigate("/products")}
-        className="mt-8 bg-[#4E220F] text-white px-8 py-3 rounded-xl hover:bg-[#9D6638] transition"
-    >
-        Continue Shopping
-    </button>
+  <button
+    onClick={() => Navigate("/products")}
+    className="mt-8 w-full max-w-xs sm:w-auto bg-[#4E220F] text-white px-6 sm:px-8 py-3 rounded-xl hover:bg-[#9D6638] transition duration-300"
+  >
+    Continue Shopping
+  </button>
 
 </div>
     );
