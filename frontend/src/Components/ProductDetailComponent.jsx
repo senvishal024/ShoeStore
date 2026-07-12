@@ -54,7 +54,7 @@ function ProductDetailComponent({setCategory}){
   }
     return(
         <>
-       <div className="min-h-screen py-16 sm:py-20 lg:py-28">
+       <div className=" py-16 sm:py-20 lg:py-28">
 
   <button
     onClick={() => navigate(-1)}
