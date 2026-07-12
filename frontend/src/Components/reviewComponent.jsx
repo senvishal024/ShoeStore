@@ -122,18 +122,18 @@ function ReviewComponent() {
 
           {/* Review Form */}
            
-          <div className="bg-white rounded-3xl shadow-lg p-8">
+          <div className="bg-white rounded-3xl shadow-lg p-5 sm:p-8">
 
-            <h3 className="text-2xl font-bold text-[#4E220F] mb-6">
+            <h3  className="text-xl sm:text-2xl font-bold text-[#4E220F] mb-6">
               Share Your Experience
             </h3>
 
             <div className="mb-6">
-            <h3 className="text-lg font-semibold text-[#4E220F] mb-3">
+            <h3 className="text-base sm:text-lg font-semibold text-[#4E220F] mb-3">
                 Your Rating
             </h3>
 
-            <div className="flex gap-2">
+            <div className="flex gap-2 flex-wrap">
                 {[1, 2, 3, 4, 5].map((star) => (
                 <FaStar
                     key={star}
@@ -151,11 +151,11 @@ function ReviewComponent() {
             <textarea
               rows="5"
               placeholder="Write your review..."
-              className="w-full border rounded-xl p-4 outline-none resize-none"
+                className="w-full border rounded-xl p-3 sm:p-4 outline-none resize-none text-sm sm:text-base"
               onChange={(e)=>setReview(e.target.value)}
             />
 
-            <button className="mt-5 bg-[#4E220F] text-white px-8 py-3 rounded-xl hover:bg-[#9D6638] transition" 
+            <button className="mt-5 w-full sm:w-auto bg-[#4E220F] text-white px-8 py-3 rounded-xl hover:bg-[#9D6638] transition" 
             onClick={()=>submitReview()}>
               Submit Review
             </button>
