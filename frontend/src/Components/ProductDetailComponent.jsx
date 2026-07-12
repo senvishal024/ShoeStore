@@ -66,7 +66,7 @@ function ProductDetailComponent({setCategory}){
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 px-6">
       
         {/* Product Image */}
-       <div className=" border-2 h-auto bg-red-400 flex items-center justify-center p-10 overflow-hidden">
+       <div className=" border-2  h-auto flex items-center justify-center p-10 overflow-hidden">
   <img
     src={details.image}
     alt={details.name}
