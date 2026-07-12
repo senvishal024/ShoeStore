@@ -69,12 +69,12 @@ function ReviewComponent() {
    <section className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-20">
 
       {/* Heading */}
-      <div className="mb-12">
-        <h2 className="text-4xl font-bold text-[#4E220F]">
+      <div className="mb-8 sm:mb-12">
+        <h2 className="text-3xl sm:text-4xl font-bold text-[#4E220F]">
           Customer Reviews
         </h2>
 
-        <p className="text-gray-500 mt-2">
+        <p className="text-sm sm:text-base text-gray-500 mt-2">
           See what our customers are saying.
         </p>
       </div>
