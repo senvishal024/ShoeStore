@@ -79,17 +79,17 @@ function ReviewComponent() {
         </p>
       </div>
 
-      <div className="grid lg:grid-cols-3 gap-10">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-10">
 
         {/* Left Side */}
-        <div className="bg-white rounded-3xl shadow-lg p-8 h-fit">
+        <div className="bg-white rounded-3xl shadow-lg p-5 sm:p-8 h-fit">
 
-          <h3 className="text-2xl font-bold text-[#4E220F]">
+          <h3 className="text-xl sm:text-2xl font-bold text-[#4E220F]">
             Overall Rating
           </h3>
 
-          <div className="flex items-center gap-3 mt-6">
-            <span className="text-6xl font-bold text-[#4E220F]">
+          <div className="flex items-center gap-3 mt-5 flex-wrap">
+            <span className="text-4xl sm:text-6xl font-bold text-[#4E220F]">
               {averageReview}
             </span>
 
