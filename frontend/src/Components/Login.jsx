@@ -21,8 +21,7 @@
             console.log("after");
             console.log(data)
             localStorage.setItem("token", data.token);
-            localStorage.setItem("role", data.role);
-            setUser({email:"",password:"",role:""});
+            setUser({email:"",password:""});
             
                  return Navigate("/");
           }
