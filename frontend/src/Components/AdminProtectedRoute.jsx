@@ -9,7 +9,7 @@ function AdminProtectedRoute({children}) {
         return <Navigate to={"/admin-login"} replace />
     }
     else{
-       return <Navigate to={"admin"} replace/>
+       return <Navigate to={"/admin"} replace/>
     }
     
   return (
