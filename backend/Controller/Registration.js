@@ -60,6 +60,51 @@ const loginController =async(req,res)=>{
         })
     }
 }
+const AdminRegistrtionController=async (req,res)=>{
+    try{
+        const {name,email,password}=req.body;
+        const hashpass=await bcrypt.hash(password,10);
+        const role="admin";
+        const findemail=await userSchema.findOne({email});
+        if(findemail){
+            return res.json("Already Registered");
+        }
+        else{
 
+        const admin=await userSchema.create({
+            name,email,password:hashpass,role
+        })
+       return res.json("Admin registered successfully",admin)
+       }
+    }
+    catch(err){
+        res.json({
+            message:"Error",
+            error:err.message
+        })
+    }
+}
+const AdminLoginController=async(req,res)=>{
+    try{
+        const {email,password}=req.body;
+        const verifyemail=await userSchema.findOne({email});
+        if(!email){
+            return res.json("Email invailed");
+        }
+        const verifypass=await userSchema.compare(password,verifyemail.password);
+        if(!verifypass){
+            return res.json("Password incorrect");
+        }
+        const token=await jwt.sign({id:verifyemail._id},"secret");
+        res.json("Login successfully",token);
+    }
+    catch(err){
+        res.json({
+            message:"Error",
+            error:err.message
+        })
+    }
+
+}
 
 module.exports={registstrationController,loginController,AdminLoginController,AdminRegistrtionController};
