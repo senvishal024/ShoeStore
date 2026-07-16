@@ -91,12 +91,12 @@ const AdminLoginController=async(req,res)=>{
         if(!email){
             return res.json("Email invailed");
         }
-        const verifypass=await userSchema.compare(password,verifyemail.password);
+        const verifypass=await bcrypt.compare(password,verifyemail.password);
         if(!verifypass){
             return res.json("Password incorrect");
         }
         const token=await jwt.sign({id:verifyemail._id},"secret");
-        res.json("Login successfully",token);
+        res.json({message:"Login successfully", token,role:verifyemail.role});
     }
     catch(err){
         res.json({

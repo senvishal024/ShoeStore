@@ -96,25 +96,6 @@
                     />
                 </div>
 
-                <div>
-                    <label className="block mb-2 text-[#D8B98A]
-                        font-semibold  font-medium">
-                        Role👤
-                    </label>
-                    <select
-                        name="role"
-                        className="w-full border-2 border-[#fff] p-3 rounded-lg focus:ring-[#fff] text-gray-300"
-                        value={user.role}
-                        onChange={(e=>setUser({
-                            ...user,
-                            role:e.target.value
-                        }))}
-                        >
-                        <option className=" text-black" value="">Select Role</option>
-                        <option className="text-black" value="client">Client</option>
-                        <option className="text-black" value="admin">Admin</option>
-                    </select>
-                </div>
                 
                 <button
                     type="submit"
