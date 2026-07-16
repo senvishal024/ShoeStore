@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 function AdminLogin() {
     const navigate=useNavigate();
     const [user,setUser]=useState({email:"",password:""});
-    const handlesubmit=async (e)=>{
+    const handleSubmit=async (e)=>{
         e.preventDefault();
         const response=await fetch("https://shoestore-4f06.onrender.com/shoeapp/admin-login",{
             method:"POST",
