@@ -4,8 +4,8 @@ function RegistrationPage(){
     const [user,setUser]=useState({name:"",email:"",password:""});
     console.log(user)
     const navigate=useNavigate();
-    const handleSubmit=async ()=>{
-    
+    const handleSubmit=async (f)=>{
+        f.preventDefault();
         console.log("before fetch")
         const response= await fetch("https://shoestore-4f06.onrender.com/shoeapp/registration",{
             method:"POST",
@@ -84,9 +84,9 @@ function RegistrationPage(){
                 </div>
 
                 <button
-                    
+                    type="submit"
                     className="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition"
-                    onClick={handleSubmit}
+                    
                 >
                     Register
                 </button>

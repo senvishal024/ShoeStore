@@ -19,7 +19,7 @@
             console.log("after fetch")
             const data=await response.json();
             console.log("after");
-            console.log(data)
+            console.log("Login data",data)
             localStorage.setItem("token", data.token);
             localStorage.setItem("role", data.role);
             setUser({email:"",password:""});
