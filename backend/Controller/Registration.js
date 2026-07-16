@@ -89,8 +89,13 @@ const AdminLoginController=async(req,res)=>{
     try{
         const {email,password}=req.body;
         const verifyemail=await userSchema.findOne({email});
-        if(!email){
+        if(!verifyemail){
             return res.json("Email invailed");
+        }
+        if(verifyemail.role!=="admin"){
+            return res.status(403).json({
+            message: "Admin access only"
+    });
         }
         const verifypass=await bcrypt.compare(password,verifyemail.password);
         if(!verifypass){

@@ -1,4 +1,5 @@
 const jwt=require("jsonwebtoken");
+const userSchema=require("../Models/userModel")
 const isLoggedIn=(req,res,next)=>{
     const token=req.header("authorization");
     if(!token){
@@ -7,7 +8,14 @@ const isLoggedIn=(req,res,next)=>{
         });
     }
     const decoded= jwt.verify(token,"secret");
-    req.user=decoded;
+    const user=await userSchema.findById(decoded.id);
+    if(!user){
+        return res.status(401).json({
+                message: "User not found"
+            });
+    }
+
+    req.user=user;
     next();
 }
 module.exports=isLoggedIn;
