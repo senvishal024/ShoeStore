@@ -118,6 +118,6 @@
     </div>
             </>
         )
-    }
+    
 
     export default LoginPage 
