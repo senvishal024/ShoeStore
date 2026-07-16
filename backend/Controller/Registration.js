@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 const userSchema=require("../Models/userModel");
 const registstrationController= async (req,res)=>{
     try{
-        const {name,email,password,role}=req.body;
+        const {name,email,password}=req.body;
         const hashpass=await bcrypt.hash(password,10);
         const findemail=await userSchema.findOne({email});
         if(findemail){
@@ -14,7 +14,7 @@ const registstrationController= async (req,res)=>{
          name,
          email,
          password:hashpass,
-         role
+        
          });
          return res.json({
    message: "User Registered Successfully",
@@ -34,28 +34,22 @@ const loginController =async(req,res)=>{
     try{
         const {email,password,role}=req.body;
          console.log("Frontend Email:", email);
-        console.log("Frontend Role:", role);
         const verifyemail= await userSchema.findOne({email});
          console.log("User Found:", verifyemail);
         if(!verifyemail){
             return res.json("Email Invalide");
         }
-        console.log("DB Role:", verifyemail.role);
 
         const verifypass=await bcrypt.compare(password,verifyemail.password);
         if(!verifypass){
            return res.json("Invalid Password");
         }
-        if(verifyemail.role !== role){
-            return res.json({
-                message:"Invalid Role"
-            })
-        }
-        const token = await jwt.sign({id:verifyemail._id,
-            role:verifyemail.role},"secret");
+    
+        
+        const token = await jwt.sign({id:verifyemail._id},"secret");
         res.json({
             message:"Login successfully",
-            token,role:verifyemail.role
+            token
         })
         console.log(token)
 

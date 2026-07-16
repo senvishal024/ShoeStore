@@ -4,7 +4,7 @@
     import { useNavigate } from "react-router-dom";
     function LoginPage(){
         const Navigate=useNavigate();
-        const [user,setUser]=useState({email:"",password:"",role:""});
+        const [user,setUser]=useState({email:"",password:""});
         const handleSubmit=async (f)=>{
             f.preventDefault();
             console.log("before fetch");
@@ -23,11 +23,8 @@
             localStorage.setItem("token", data.token);
             localStorage.setItem("role", data.role);
             setUser({email:"",password:"",role:""});
-            if(data.role==="client"){
-                 return Navigate("/")
-            }
-          else if(data.role==="admin"){
-             return Navigate("/admin")
+            
+                 return Navigate("/");
           }
             }
         return (
@@ -96,25 +93,7 @@
                     />
                 </div>
 
-                <div>
-                    <label className="block mb-2 text-[#D8B98A]
-                        font-semibold  font-medium">
-                        Role👤
-                    </label>
-                    <select
-                        name="role"
-                        className="w-full border-2 border-[#fff] p-3 rounded-lg focus:ring-[#fff] text-gray-300"
-                        value={user.role}
-                        onChange={(e=>setUser({
-                            ...user,
-                            role:e.target.value
-                        }))}
-                        >
-                        <option className=" text-black" value="">Select Role</option>
-                        <option className="text-black" value="client">Client</option>
-                        <option className="text-black" value="admin">Admin</option>
-                    </select>
-                </div>
+                
                 
                 <button
                     type="submit"
