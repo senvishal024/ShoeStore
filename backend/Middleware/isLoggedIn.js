@@ -1,6 +1,6 @@
 const jwt=require("jsonwebtoken");
 const userSchema=require("../Models/userModel")
-const isLoggedIn=(req,res,next)=>{
+const isLoggedIn=async (req,res,next)=>{
     const token=req.header("authorization");
     if(!token){
         return res.status(401).json({
