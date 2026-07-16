@@ -14,7 +14,6 @@ const registstrationController= async (req,res)=>{
          name,
          email,
          password:hashpass,
-        
          });
          return res.json({
    message: "User Registered Successfully",
@@ -62,4 +61,5 @@ const loginController =async(req,res)=>{
     }
 }
 
-module.exports={registstrationController,loginController}
+
+module.exports={registstrationController,loginController,AdminLoginController,AdminRegistrtionController};

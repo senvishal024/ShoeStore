@@ -1,7 +1,7 @@
 import { useState } from "react"
 import {Link,useNavigate} from "react-router-dom"
 function RegistrationPage(){
-    const [user,setUser]=useState({name:"",email:"",password:"",role:""});
+    const [user,setUser]=useState({name:"",email:"",password:""});
     console.log(user)
     const navigate=useNavigate();
     const handleSubmit=async ()=>{
@@ -19,7 +19,7 @@ function RegistrationPage(){
         const data =await response.json();
         console.log("after data fetch")
         console.log(data);
-        setUser({name:"",email:"",password:"",role:""})
+        setUser({name:"",email:"",password:""})
     }   
 
     return(
@@ -81,23 +81,6 @@ function RegistrationPage(){
                         password:e.target.value
                     })}
                     />
-                </div>
-
-                <div>
-                    <label className="block mb-2 text-sm font-medium">
-                    Role
-                    </label>
-                    <select
-                    className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    onChange={(e)=>setUser({
-                        ...user,
-                        role:e.target.value
-                    })}
-                    >
-                    <option value="">Select Role</option>
-                    <option value="client">Client</option>
-                    <option value="admin">Admin</option>
-                    </select>
                 </div>
 
                 <button

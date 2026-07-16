@@ -17,6 +17,7 @@ import WishlistPage from './Pages/WishlistPage'
 import Protectedroute from './Components/Protectedroute'
 import AdminProtectedRoute from './Components/AdminProtectedRoute'
 import {Toaster} from 'react-hot-toast'
+import AdminLogin from './Components/AdminLogin'
 
 function App() {
  
@@ -27,6 +28,7 @@ function App() {
       <Routes>
         <Route path='/' element={<HomePage/>}/>
         <Route path='/registration' element={<RegistrationPage/>} />
+        <Route path='/admin-login' element={<AdminLogin/>}/>
         <Route path='/login' element={<LoginPage/>}/>
         <Route path='/admin' element={<AdminProtectedRoute><AdminHome/></AdminProtectedRoute>}/>
         <Route path='/products' element={<Product/>}/>

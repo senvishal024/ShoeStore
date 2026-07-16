@@ -1,5 +1,5 @@
 const express=require("express");
-const { registstrationController, loginController } = require("../Controller/Registration");
+const { registstrationController, loginController, AdminLoginController, AdminRegistrtionController } = require("../Controller/Registration");
 const isLoggedIn = require("../Middleware/isLoggedIn");
 const { AddProduct, ShowProducts, ShowProductsDetail, DeleteProduct, EditProduct, Dashboard, featuredProduct, ShowProductsHome } = require("../Controller/ProductController");
 const { CartAdd, CartShow, CartDecrease, CartIncrease, CartDelete } = require("../Controller/CartController");
@@ -12,6 +12,8 @@ const router=express.Router();
 
 router.post("/registration",registstrationController);
 router.post("/login",loginController);
+router.post("/admin-registration",AdminRegistrtionController);
+router.post("/admin-login",AdminLoginController);
 router.post("/admin/add-products",isLoggedIn,adminIsLoggedIn,AddProduct);
 router.get("/show-products",optionalLogin,ShowProducts);
 router.get("/show-vertical-card",ShowProductsHome)

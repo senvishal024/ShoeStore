@@ -1,37 +1,32 @@
-    import { useState } from "react";
-    import { FaArrowLeft } from "react-icons/fa";
-    import {Link} from "react-router-dom"
-    import { useNavigate } from "react-router-dom";
-    function LoginPage(){
-        const Navigate=useNavigate();
-        const [user,setUser]=useState({email:"",password:""});
-        const handleSubmit=async (f)=>{
-            f.preventDefault();
-            console.log("before fetch");
-            const response=await fetch("https://shoestore-4f06.onrender.com/shoeapp/login",{
-                method:"POST",
-                credentials: "include",
-                headers:{
-                    "Content-Type":"application/json"
-                },
-                body:JSON.stringify(user)
-            });
-            console.log("after fetch")
-            const data=await response.json();
-            console.log("after");
-            console.log(data)
-            localStorage.setItem("token", data.token);
-            localStorage.setItem("role", data.role);
-            setUser({email:"",password:""});
-            if(data.role==="client"){
-                 return Navigate("/");
-            }
-          else{
-             return alert("enter vailed information");
-          }
-            }
-        return (
-            <>
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
+
+function AdminLogin() {
+    const navigate=useNavigate();
+    const [user,setUser]=useState({email:"",password:""});
+    const handlesubmit=async (e)=>{
+        e.preventDefault();
+        const response=await fetch("https://shoestore-4f06.onrender.com/shoeapp/admin-login",{
+            method:"POST",
+            credentials: "include",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify(user)
+        })
+        const data=await response.json();
+        localStorage.setItem("token",data.token);
+        localStorage.setItem("role", data.role);
+        setUser({email:"",password:""});
+        if(data.role==="admin"){
+        return navigate("/admin");
+        }
+        else{
+            return alert("enter vailed information");
+        }
+    }
+  return (
+    <>
             
         <div className="min-h-screen w-full bg-cover text-[#D8B98A] flex flex-col items-center justify-center" style={{
     backgroundImage:
@@ -55,7 +50,7 @@
             
             <h2 className="text-4xl font-extrabold
             text-[#D8B98A] font-bold text-center mb-6">
-                Login
+               Admin Login
             </h2>
             <p className="text-gray-200 mt-2 text-center">
             Welcome Back 
@@ -96,25 +91,7 @@
                     />
                 </div>
 
-                <div>
-                    <label className="block mb-2 text-[#D8B98A]
-                        font-semibold  font-medium">
-                        Role👤
-                    </label>
-                    <select
-                        name="role"
-                        className="w-full border-2 border-[#fff] p-3 rounded-lg focus:ring-[#fff] text-gray-300"
-                        value={user.role}
-                        onChange={(e=>setUser({
-                            ...user,
-                            role:e.target.value
-                        }))}
-                        >
-                        <option className=" text-black" value="">Select Role</option>
-                        <option className="text-black" value="client">Client</option>
-                        <option className="text-black" value="admin">Admin</option>
-                    </select>
-                </div>
+                
                 
                 <button
                     type="submit"
@@ -138,7 +115,7 @@
 
     </div>
             </>
-        )
-    }
+  )
+}
 
-    export default LoginPage 
+export default AdminLogin
