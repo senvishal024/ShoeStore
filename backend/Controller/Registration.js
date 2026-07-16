@@ -48,7 +48,8 @@ const loginController =async(req,res)=>{
         const token = await jwt.sign({id:verifyemail._id},"secret");
         res.json({
             message:"Login successfully",
-            token
+            token,
+            role:verifyemail.role
         })
         console.log(token)
 

@@ -25,7 +25,7 @@
             setUser({email:"",password:""});
             if(data.role==="client"){
                  return Navigate("/");
-            }
+            }   
           else{
              return alert("enter vailed information");
           }
